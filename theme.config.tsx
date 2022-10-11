@@ -41,6 +41,7 @@ const logo = (
 )
 
 export default {
+  darkMode: true,
   project: {
     link: 'https://github.com/shuding/nextra'
   },
