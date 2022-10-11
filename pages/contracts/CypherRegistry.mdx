@@ -1,0 +1,48 @@
+---
+title: 'CypherRegistry'
+description: ''
+---
+
+# CypherRegistry
+
+Registry that stores mappings between protocol contracts and their assigned escrow
+
+## Constructor
+
+```solidity
+constructor(
+  string memory _protocolName,
+  address _architect,
+  address _registry
+)
+```
+
+### Parameters
+
+- `_protocolName` - The name of the protocol
+- `_architect` - The address of the architect
+- `_registry` - The address of the registry
+
+## Functions
+
+### createEscrow
+
+```solidity
+function createEscrow(
+  address protocol,
+  address token,
+  uint256 tokenThreshold,
+  uint256 timeLimit,
+  address[] memory oracles
+) public architectOnly(protocol) returns (address)
+```
+
+Creates a new escrow contract and registers it in the registry
+
+### attachEscrow
+
+```solidity
+function attachEscrow(address escrow, address protocol) public architectOnly(protocol)
+```
+
+Attaches an existing escrow contract to a protocol

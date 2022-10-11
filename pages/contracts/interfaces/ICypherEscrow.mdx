@@ -1,0 +1,29 @@
+---
+title: 'ICypherEscrow'
+description: ''
+---
+
+# ICypherEscrow
+
+Functions for token transfers via CypherEscrow
+
+## Functions
+
+```solidity
+function escrowTokens(
+  address origin,
+  address dst,
+  address asset,
+  uint256 amount
+) external;
+```
+
+Transfers tokens from current contract to designated CypherEscrow contract specified by `getEscrow()`
+
+### escrowETH
+
+```solidity
+function escrowETH(address origin, address dst) external payable;
+```
+
+Transfers ETH from current contract to designated CypherEscrow contract specified by `getEscrow()`

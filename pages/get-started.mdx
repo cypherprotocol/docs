@@ -7,33 +7,32 @@ out to us [here](/themes/docs/configuration).
 
 Insert logos for Discord, Telegram, Twitter, email, etc.
 
-## Create Manually
+## Installation
 
-Nextra works like a Next.js plugin, and it accepts a theme config (layout) to render the page. To start:
+To install with [**Foundry**](https://github.com/gakonst/foundry):
 
-1. Locate the ICypherEscrow interface (right below this sentence):
-
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
-
-interface ICypherEscrow {
-    function escrowTokens(
-        address from,
-        address to,
-        address asset,
-        uint256 amount
-    ) external;
-
-    function escrowETH(address from, address to) external payable;
-}
+```
+forge install cypherprotocol/cypher-contracts
 ```
 
-2. Import the `ICypherEscrow` interface into the contracts where function move any funds in and out:
+To install with [**Hardhat**](https://github.com/nomiclabs/hardhat) or [**Truffle**](https://github.com/trufflesuite/truffle):
+
+```
+npm install cypher-contracts
+```
+
+## Setup Manually
+
+1. Import the [`ICypherEscrow`](/contracts/interfaces/ICypherEscrow) and [`CypherProtocol`](/contracts/CypherProtocol) contracts into relevant protocol contracts
 
 ```solidity
+import {ICypherEscrow} from "../../src/interfaces/ICypherEscrow.sol";
 import {CypherProtocol} from "../../src/CypherProtocol.sol";
+```
 
+2. Inherit the [`CypherProtocol`](/contracts/CypherProtocol) contract in the relevant protocol contracts
+
+```solidity
 contract MockProtocol is CypherProtocol {
     constructor(address architect, address registry) CypherProtocol("MockProtocol", architect, registry) {}
 }
@@ -51,6 +50,6 @@ function withdraw(address to, uint amount) external {
 }
 ```
 
-4. You are good to go! Deploy your contracts, then fill their addresses in on the vault page and grow your business!
+4. You are good to go! Deploy your contracts, then fill their addresses in on the escrow page and grow your business!
 
 ---
