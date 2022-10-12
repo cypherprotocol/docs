@@ -15,12 +15,12 @@ When someone wants to deposit into a protocol on-chain, they must go through six
 
 At each step we see a potential exploit:
 
-1. Consumer banking app: fraudulent transactions, losing your PIN on a debit card, losing your password
-2. Crypto on-ramp app: losing your password, seed phrase
-3. Wallet: losing your seed phrase, your private key
-4. dApp frontend: connecting to a malicious frontend, unknowingly handing over permissions
-5. Smart contract: sign approvals for unknown transactions, approving unknown behavior, protocol you want to use gets hacked
-6. Node: MEV front-running your transaction
+1. `Consumer Banking App` - fraudulent transactions, losing your PIN on a debit card, losing your password
+2. `Crypto On-ramp App` - losing your password, seed phrase
+3. `Wallet` - losing your seed phrase, your private key
+4. `dApp Frontend` - connecting to a malicious frontend, unknowingly handing over permissions
+5. `Smart Contracts` - sign approvals for unknown transactions, approving unknown behavior, protocol you want to use gets hacked
+6. `Node` - MEV front-running your transaction
 
 We looked at each step and saw that all of the hacks had the same thing in common, they were exploited at the transaction layer. So, we built software that exists right before this layer.
 
@@ -36,4 +36,4 @@ As our algorithm gains more exposure, it will learn faster. This is still a tech
 
 ### How does this benefit my protocol?
 
-Your team can now experiment more on main-net without worrying about hacks. Just like if you were publishing to a dev environment in cloud infra.
+Your team can now experiment more on main-net without worrying about hacks. Just like if you were publishing to a deveveloper environment in cloud infra.
