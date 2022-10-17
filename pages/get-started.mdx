@@ -32,11 +32,11 @@ import {ICypherEscrow} from "../../src/interfaces/ICypherEscrow.sol";
 import {CypherProtocol} from "../../src/CypherProtocol.sol";
 ```
 
-2. Inherit the [`CypherProtocol`](/contracts/CypherProtocol) contract in the relevant protocol contracts and pass in a `name` for the contract, a designated `architect` address, and the `registry` address from [here](/contracts/deployment-addresses)
+2. Inherit the [`CypherProtocol`](/contracts/CypherProtocol) contract in the relevant protocol contracts and pass in a `name` for the contract, a designated `verifier` address, and the `registry` address from [here](/contracts/deployment-addresses)
 
 ```solidity
 contract MockProtocol is CypherProtocol {
-    constructor(address architect, address registry) CypherProtocol("MockProtocol", architect, registry) {}
+    constructor(address verifier, address registry) CypherProtocol("MockProtocol", verifier, registry) {}
 }
 ```
 

@@ -12,7 +12,7 @@ Primary contract to inherit from in order to interact with Cypher
 ```solidity
 constructor(
   string memory _protocolName,
-  address _architect,
+  address _verifier,
   address _registry
 )
 ```
@@ -20,7 +20,7 @@ constructor(
 ### Parameters
 
 - `_protocolName` - The name of the protocol
-- `_architect` - The address of the architect, which is the user who will be able to create and assign an escrow
+- `_verifier` - The address of the verifier, which is the user who will be able to create and assign an escrow
 - `_registry` - The address of the CypherRegistry found [here](/contracts/deployment-addresses)
 
 ## Functions
@@ -31,10 +31,10 @@ constructor(
 function getEscrow() internal view returns (address)
 ```
 
-### getArchitect
+### getVerifier
 
 ```solidity
-function getArchitect() external view returns (address)
+function getVerifier() external view returns (address)
 ```
 
 ### getProtocolName
