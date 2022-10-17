@@ -17,8 +17,8 @@ function createEscrow(
   address token,
   uint256 tokenThreshold,
   uint256 timeLimit,
-  address[] memory oracles
-) public architectOnly(protocol) returns (address)
+  address[] memory verifiers
+) public verifierOnly(protocol) returns (address)
 ```
 
 Creates a new escrow contract and registers it in the registry
@@ -26,7 +26,7 @@ Creates a new escrow contract and registers it in the registry
 ### attachEscrow
 
 ```solidity
-function attachEscrow(address escrow, address protocol) public architectOnly(protocol)
+function attachEscrow(address escrow, address protocol) public verifierOnly(protocol)
 ```
 
 Attaches an existing escrow contract to a protocol
